@@ -1,0 +1,126 @@
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(255, 255, 255);
+}
+li {
+  float: right;
+}
+
+li a, .dropbtn {
+  display: inline-block;
+  color: rgb(71, 68, 68);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+  background-color:#06999e;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+body {
+    background: rgb(180, 180, 180);
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #292727;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: rgb(255, 255, 255);
+  padding: 20px 26px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #5a5656;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.navbar-brand{
+    background-color: #06999e;
+    text-decoration: none;
+    padding: 8px 16px;
+    font-size: 26px;
+    color: rgb(255, 255, 255);
+    position: absolute;
+}
+.column {
+    float: left;
+    width: 45.0%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+    background: rgb(255, 255, 255); 
+}
+.right {
+  width: 30%;
+}
+.comparisons{
+ width: 90%;
+}
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+@media screen and (max-width: 650px) {
+    .column {
+      width: 100%;
+      display: block;
+    }
+  }
+.container {
+  padding: 5px;
+  
+}
+  
+  h1 {
+    color:rgb(4, 158, 163);
+    text-align: center;
+
+  }
+  img{
+    float: left;
+  }
+table {
+    border-collapse: collapse;
+    border: 2px black solid;
+    font: 12px sans-serif;
+}
+
+td {
+    border: 1px black solid;
+    padding: 5px;
+}
+function displayHTMLTable(results){
+	var table = "<table class='table'>";
+	var data = results.data;
+	 
+	for(i=0;i<data.length;i++){
+		table+= "<tr>";
+		var row = data[i];
+		var cells = row.join(",").split(",");
+		 
+		for(j=0;j<cells.length;j++){
+			table+= "<td>";
+			table+= cells[j];
+			table+= "</th>";
+		}
+		table+= "</tr>";
+	}
+	table+= "</table>";
+	$("#parsed_csv_list").html(table);
+}
